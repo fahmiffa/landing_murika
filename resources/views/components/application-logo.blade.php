@@ -1,0 +1,1 @@
+<img src="{{ asset('murika.png') }}" {{ $attributes }} alt="Logo" />

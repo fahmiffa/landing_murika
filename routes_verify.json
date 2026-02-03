@@ -1,0 +1,1 @@
+[{"domain":null,"method":"GET|HEAD","uri":"jadwal","name":"jadwal","action":"App\\Livewire\\Pages\\Jadwal\\Index","middleware":["web","Illuminate\\Auth\\Middleware\\Authenticate","Illuminate\\Auth\\Middleware\\EnsureEmailIsVerified"]}]

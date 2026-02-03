@@ -1,0 +1,1 @@
+[{"domain":null,"method":"GET|HEAD","uri":"salary","name":"salary","action":"App\\Livewire\\Pages\\Salary\\Index","middleware":["web","Illuminate\\Auth\\Middleware\\Authenticate","Illuminate\\Auth\\Middleware\\EnsureEmailIsVerified"]}]
