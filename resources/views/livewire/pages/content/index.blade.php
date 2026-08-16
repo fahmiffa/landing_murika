@@ -143,9 +143,20 @@
                         </div>
 
                         <!-- Image -->
-                        <div>
+                        <div x-data="{ isUploading: false, progress: 0 }"
+                             x-on:livewire-upload-start="isUploading = true"
+                             x-on:livewire-upload-finish="isUploading = false; progress = 0"
+                             x-on:livewire-upload-error="isUploading = false"
+                             x-on:livewire-upload-progress="progress = $event.detail.progress">
                             <label class="block text-sm font-medium text-gray-700">Gambar Unggulan</label>
                             <input type="file" wire:model="image" class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-orange-50 file:text-orange-700 hover:file:bg-orange-100">
+                            
+                            <!-- Progress Bar -->
+                            <div x-show="isUploading" class="w-full bg-gray-200 rounded-full h-2.5 mt-2 overflow-hidden" style="display: none;">
+                                <div class="bg-orange-600 h-2.5 rounded-full transition-all duration-300 ease-out" x-bind:style="'width: ' + progress + '%'"></div>
+                            </div>
+                            <div x-show="isUploading" class="text-xs text-orange-600 mt-1 font-medium animate-pulse" style="display: none;">Mengunggah: <span x-text="progress"></span>%</div>
+
                             @error('image') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
 
                             @if ($image)

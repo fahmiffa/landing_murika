@@ -174,10 +174,21 @@
 
                         <!-- Input Grid -->
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div class="md:col-span-2">
+                            <div class="md:col-span-2"
+                                 x-data="{ isUploading: false, progress: 0 }"
+                                 x-on:livewire-upload-start="isUploading = true"
+                                 x-on:livewire-upload-finish="isUploading = false; progress = 0"
+                                 x-on:livewire-upload-error="isUploading = false"
+                                 x-on:livewire-upload-progress="progress = $event.detail.progress">
                                 <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-1.5">Gambar Hero</label>
                                 <input type="file" wire:model="image" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-sm file:font-semibold file:bg-orange-50 file:text-orange-700 hover:file:bg-orange-100 transition-all border border-gray-200 rounded-xl p-1.5">
-                                <div wire:loading wire:target="image" class="text-xs text-orange-600 mt-1 font-medium animate-pulse">Mengunggah gambar...</div>
+                                
+                                <!-- Progress Bar -->
+                                <div x-show="isUploading" class="w-full bg-gray-200 rounded-full h-2 mt-2 overflow-hidden" style="display: none;">
+                                    <div class="bg-orange-600 h-2 rounded-full transition-all duration-300 ease-out" x-bind:style="'width: ' + progress + '%'"></div>
+                                </div>
+                                <div x-show="isUploading" class="text-xs text-orange-600 mt-1 font-medium animate-pulse" style="display: none;">Mengunggah gambar... <span x-text="progress"></span>%</div>
+                                
                                 @error('image') <span class="text-red-500 text-[10px] font-bold mt-1 uppercase tracking-wider">{{ $message }}</span> @enderror
                             </div>
 
