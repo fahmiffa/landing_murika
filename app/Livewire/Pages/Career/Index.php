@@ -54,7 +54,7 @@ class Index extends Component
         $this->name = $career->name;
         $this->start_date = $career->start_date->format('Y-m-d');
         $this->end_date = $career->end_date->format('Y-m-d');
-        $this->status = $career->status;
+        $this->status = $career->status ? 1 : 0;
 
         $this->isEdit = true;
         $this->isOpen = true;
