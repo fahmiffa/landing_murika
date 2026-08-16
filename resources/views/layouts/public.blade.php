@@ -154,10 +154,6 @@
                 <p class="text-slate-400 text-sm">
                     &copy; {{ date('Y') }} ({{ config('app.name', 'MURIKA') }}). All rights reserved.
                 </p>
-                <div class="flex items-center gap-2">
-                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                    <span class="text-slate-400 text-sm">Sistem Aktif</span>
-                </div>
             </div>
         </div>
     </footer>

@@ -68,26 +68,6 @@
             {!! $content->content !!}
         </div>
 
-        <!-- CTA Section -->
-        <div class="mt-20 p-8 md:p-12 bg-slate-900 rounded-[2.5rem] relative overflow-hidden group shadow-2xl">
-            <div class="absolute top-0 right-0 -m-12 w-64 h-64 bg-orange-600 rounded-full opacity-10 transition-transform group-hover:scale-125 duration-700"></div>
-            <div class="relative z-10">
-                <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
-                    <div class="text-center lg:text-left">
-                        <span class="text-orange-500 font-black text-[10px] uppercase tracking-widest mb-4 block">Siap Berprestasi?</span>
-                        <h3 class="text-2xl lg:text-3xl font-black text-white mb-4 uppercase">Ayo bergabung dengan Lembaga Murika!</h3>
-                        <p class="text-slate-400 text-base max-w-xl font-medium">
-                            Dapatkan bimbingan intensif dari tentor berpengalaman untuk membantu kamu mencapai target prestasimu.
-                        </p>
-                    </div>
-                    <div class="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
-                        <a href="#" class="px-8 py-4 bg-orange-600 text-white font-black rounded-2xl hover:bg-orange-700 transition shadow-lg shadow-orange-900/20 text-center uppercase text-xs tracking-widest">Daftar Sekarang</a>
-                        <a href="#" class="px-8 py-4 bg-white/10 text-white font-black rounded-2xl border border-white/20 hover:bg-white/20 transition text-center uppercase text-xs tracking-widest backdrop-blur-sm">Tanya Dulu</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <!-- Related Posts -->
         @if($related->count() > 0)
         <div class="mt-24">
